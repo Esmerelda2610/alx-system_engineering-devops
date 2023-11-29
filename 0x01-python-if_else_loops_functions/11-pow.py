@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def pow(m, n);
-    return (m ** n)
+def pow(a, b):
+    return (a ** b)

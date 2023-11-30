@@ -1,25 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
 
 /**
- * print_listint - prints all elements of a listint_t list
- * @h: pointer to head of list
- * Return: number of nodes
+ * check_cycle - checks if a singly linked list has a cycle in it
+ * @list: pointer to head of list.
+ * Return: 0 if there is no cycle, 1 if there is a cycle.
  */
-size_t print_listint(const listint_t *h)
+int check_cycle(listint_t *list)
 {
-    const listint_t *current;
-    unsigned int n; /* number of nodes */
+	listint_t *ptr1 = NULL;
+	listint_t *ptr2 = NULL;
 
-    current = h;
-    n = 0;
-    while (current != NULL)
-    {
-        printf("%i\n", current->n);
-        current = current->next;
-        n++;
-    }
+	if (list == NULL)
+		return (0);
+	ptr1 = list;
+	ptr2 = list;
 
-    return (n);
-}
+	while (ptr1 && ptr2->next)
+	{
+		ptr1 = ptr1->next;
+		ptr2 = ptr2->next->next;
+
+		if (ptr1 == ptr2)
+			return (1);
+	}
+	return (0);

@@ -1,4 +1,4 @@
-ALX 0x00 Shell Basics
+0x00 Shell Basics
 
 cd
 ls

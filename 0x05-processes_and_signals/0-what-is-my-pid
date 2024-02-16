@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Display the Process ID
-
-echo "$$"
